@@ -47,7 +47,7 @@ an individual is officially representing the community in public spaces.
 ## Enforcement
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported by contacting the project team at ascend@your-domain.com. All
+reported by contacting the project team at harshpandhehome@gmail.com. All
 complaints will be reviewed and investigated promptly and fairly.
 
 ## Enforcement Guidelines
