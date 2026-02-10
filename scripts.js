@@ -106,3 +106,63 @@ document.addEventListener('keydown', function (event) {
         closeAllModals();
     }
 });
+
+// Pre-loader
+window.addEventListener('load', function () {
+    var loader = document.getElementById('pre-loader');
+    if (!loader) return;
+    window.setTimeout(function () {
+        loader.classList.add('is-hidden');
+        window.setTimeout(function () {
+            loader.remove();
+        }, 700);
+    }, 1200);
+});
+
+// Flight scene interactions
+(function () {
+    var scene = document.querySelector('.air-scene');
+    if (!scene) return;
+
+    var bounds = 50;
+    var darkMode = 0;
+    var rafId = null;
+    var lastEvent = null;
+
+    function mapRange(min, max, outMin, outMax, value) {
+        if (max - min === 0) return outMin;
+        return outMin + ((value - min) / (max - min)) * (outMax - outMin);
+    }
+
+    function updateRotation() {
+        if (!lastEvent) return;
+        var rect = scene.getBoundingClientRect();
+        var relX = (lastEvent.clientX - rect.left) / rect.width;
+        var relY = (lastEvent.clientY - rect.top) / rect.height;
+        var clampedX = Math.min(Math.max(relX, 0), 1);
+        var clampedY = Math.min(Math.max(relY, 0), 1);
+        var newX = mapRange(0, 1, -bounds, bounds, clampedX);
+        var newY = mapRange(0, 1, bounds, -bounds, clampedY);
+
+        scene.style.setProperty('--rotate-x', newY.toFixed(2));
+        scene.style.setProperty('--rotate-y', newX.toFixed(2));
+        rafId = null;
+    }
+
+    scene.addEventListener('pointermove', function (event) {
+        lastEvent = event;
+        if (!rafId) {
+            rafId = window.requestAnimationFrame(updateRotation);
+        }
+    });
+
+    scene.addEventListener('pointerleave', function () {
+        scene.style.setProperty('--rotate-x', '0');
+        scene.style.setProperty('--rotate-y', '0');
+    });
+
+    scene.addEventListener('pointerdown', function () {
+        darkMode = darkMode ? 0 : 1;
+        scene.style.setProperty('--dark', darkMode);
+    });
+})();

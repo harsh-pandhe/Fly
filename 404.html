@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ASCEND | Page Not Found</title>
+    <meta name="description" content="The page you were looking for doesn’t exist or may have been moved.">
+    <style>
+        * {
+            border: 0;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --hue: 0;
+            --sat: 0%;
+            --gray50: hsl(var(--hue), var(--sat), 95%);
+            --gray150: hsl(var(--hue), var(--sat), 85%);
+            --gray600: hsl(var(--hue), var(--sat), 40%);
+            --gray850: hsl(var(--hue), var(--sat), 15%);
+            --gray950: hsl(var(--hue), var(--sat), 5%);
+            --trans-dur: 0.3s;
+            color-scheme: light dark;
+            font-size: clamp(1rem, 0.9773rem + 0.1136vw, 1.25rem);
+        }
+
+        body,
+        button {
+            color: light-dark(var(--gray950), var(--gray50));
+            font: 1em / 1.5 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: light-dark(var(--gray50), var(--gray950));
+            display: grid;
+            place-items: center;
+            height: 100vh;
+            transition: background-color var(--trans-dur), color var(--trans-dur);
+        }
+
+        h1 {
+            font-size: 3em;
+            font-weight: 500;
+            line-height: 1;
+            margin: 0 0 1.5rem;
+        }
+
+        main {
+            text-align: center;
+            width: 100vw;
+            max-width: 37.5em;
+            height: min-content;
+            min-height: 100vh;
+        }
+
+        p {
+            margin-bottom: 1.5em;
+        }
+
+        section {
+            padding: 0 1.5em 1.5em;
+        }
+
+        .btn-link {
+            background-color: light-dark(var(--gray950), var(--gray50));
+            border-radius: 1.5em;
+            color: light-dark(var(--gray50), var(--gray950));
+            display: block;
+            margin: 3em auto;
+            padding: 0.75em 1.5em;
+            text-decoration: none;
+            transition: background-color var(--trans-dur), color var(--trans-dur), opacity var(--trans-dur);
+            width: max-content;
+        }
+
+        .btn-link:hover {
+            opacity: 0.9;
+        }
+
+        .keyboard {
+            background-color: var(--gray150);
+            background-image:
+                linear-gradient(90deg, hsla(var(--hue), var(--sat), 10%, 0.4), hsla(var(--hue), var(--sat), 10%, 0));
+            border-radius: 0.375em;
+            box-shadow:
+                -0.25em -0.25em 0.375em hsla(0, 0%, 0%, 0.6),
+                0 0 0 1px hsl(var(--hue), var(--sat), 67%) inset;
+            direction: ltr;
+            display: grid;
+            grid-template-columns: repeat(11, 1fr);
+            gap: 0.375em;
+            margin: 0 auto;
+            padding: 0.375em;
+            position: relative;
+            width: min-content;
+            transition: background-color var(--trans-dur), box-shadow var(--trans-dur);
+        }
+
+        .keyboard::before,
+        .keyboard::after {
+            background-color: var(--gray50);
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: 100%;
+            transition: background-color var(--trans-dur), box-shadow var(--trans-dur);
+        }
+
+        .keyboard::before {
+            box-shadow:
+                -0.25em -0.25em 0.375em hsla(0, 0%, 0%, 0.6),
+                0.125em 0 0.125em hsla(var(--hue), var(--sat), 10%, 0.2) inset,
+                0.125em -0.625em 0.25em hsla(var(--hue), var(--sat), 10%, 0.5) inset;
+            left: calc(50% - 0.25em);
+            width: 0.5em;
+            height: 9em;
+        }
+
+        .keyboard::after {
+            border-radius: 0.125em 0.125em 0 0;
+            box-shadow: 0.1875em -0.125em 0.25em hsla(var(--hue), var(--sat), 10%, 0.5) inset;
+            left: calc(50% - 0.375em);
+            width: 0.75em;
+            height: 0.625em;
+        }
+
+        .keyboard__key {
+            background-color: light-dark(var(--gray50), var(--gray850));
+            border-radius: 0.25em;
+            box-shadow:
+                -0.2em -0.125em 0.125em hsla(0, 0%, 0%, 0.25),
+                0 0 0 0.1em hsla(0, 0%, 0%, 0.3),
+                0.02em 0.02em 0.02em hsla(0, 0%, 0%, 0.4) inset;
+            color: light-dark(var(--gray600), var(--gray50));
+            padding: 0.375em;
+            position: relative;
+            width: 2.5em;
+            height: 2.5em;
+            transition: background-color var(--trans-dur), box-shadow 0.1s, color var(--trans-dur);
+            -webkit-appearance: none;
+            appearance: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .keyboard__key--shaded {
+            background-color: light-dark(var(--gray850), var(--gray50));
+            color: light-dark(var(--gray50), var(--gray600));
+        }
+
+        .keyboard__key-label {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.1s;
+        }
+
+        .keyboard__key-label--small {
+            font-size: 0.875em;
+        }
+
+        .keyboard__key:active,
+        .keyboard__key--active {
+            box-shadow:
+                0 0 0.1em hsla(0, 0%, 0%, 0.2),
+                0 0 0 0.1em hsla(0, 0%, 0%, 0.4),
+                0 -0.025em 0 hsla(0, 0%, 0%, 0.6) inset;
+        }
+
+        .keyboard__key:active .keyboard__key-label,
+        .keyboard__key--active .keyboard__key-label {
+            transform: scale(0.96);
+        }
+
+        .scroller {
+            display: flex;
+            align-items: flex-end;
+            overflow-x: auto;
+            margin: 0 0 3.75em;
+            padding: 0 1.5em 0.75em;
+            width: 100%;
+            height: 17.25em;
+        }
+
+        .icon {
+            width: 1.1em;
+            height: 1.1em;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <main data-testid="not-found">
+        <div class="scroller">
+            <div class="keyboard" aria-hidden="true">
+                <button class="keyboard__key keyboard__key--shaded" data-key="Escape" type="button">
+                    <span class="keyboard__key-label keyboard__key-label--small">esc</span>
+                </button>
+                <button class="keyboard__key" data-key="1" type="button"><span
+                        class="keyboard__key-label">1</span></button>
+                <button class="keyboard__key keyboard__key--shaded" data-key="2" type="button"><span
+                        class="keyboard__key-label">2</span></button>
+                <button class="keyboard__key" data-key="3" type="button"><span
+                        class="keyboard__key-label">3</span></button>
+                <button class="keyboard__key keyboard__key--shaded" data-key="4" type="button"><span
+                        class="keyboard__key-label">4</span></button>
+                <button class="keyboard__key keyboard__key--shaded" data-key="5" type="button"><span
+                        class="keyboard__key-label">5</span></button>
+                <button class="keyboard__key keyboard__key--shaded" data-key="6" type="button"><span
+                        class="keyboard__key-label">6</span></button>
+                <button class="keyboard__key" data-key="7" type="button"><span
+                        class="keyboard__key-label">7</span></button>
+                <button class="keyboard__key keyboard__key--shaded" data-key="8" type="button"><span
+                        class="keyboard__key-label">8</span></button>
+                <button class="keyboard__key" data-key="9" type="button"><span
+                        class="keyboard__key-label">9</span></button>
+                <button class="keyboard__key keyboard__key--shaded" data-key="0" type="button"><span
+                        class="keyboard__key-label">0</span></button>
+                <button class="keyboard__key keyboard__key--shaded" data-key="q" type="button"><span
+                        class="keyboard__key-label">Q</span></button>
+                <button class="keyboard__key" data-key="w" type="button"><span
+                        class="keyboard__key-label">W</span></button>
+                <button class="keyboard__key keyboard__key--shaded" data-key="e" type="button"><span
+                        class="keyboard__key-label">E</span></button>
+                <button class="keyboard__key" data-key="r" type="button"><span
+                        class="keyboard__key-label">R</span></button>
+                <button class="keyboard__key keyboard__key--shaded" data-key="t" type="button"><span
+                        class="keyboard__key-label">T</span></button>
+                <button class="keyboard__key" data-key="y" type="button"><span
+                        class="keyboard__key-label">Y</span></button>
+                <button class="keyboard__key keyboard__key--shaded" data-key="u" type="button"><span
+                        class="keyboard__key-label">U</span></button>
+                <button class="keyboard__key" data-key="i" type="button"><span
+                        class="keyboard__key-label">I</span></button>
+                <button class="keyboard__key keyboard__key--shaded" data-key="o" type="button"><span
+                        class="keyboard__key-label">O</span></button>
+                <button class="keyboard__key" data-key="p" type="button"><span
+                        class="keyboard__key-label">P</span></button>
+                <button class="keyboard__key keyboard__key--shaded" data-key="Delete" type="button">
+                    <span class="keyboard__key-label keyboard__key-label--small">del</span>
+                </button>
+                <button class="keyboard__key keyboard__key--shaded" data-key="a" type="button"><span
+                        class="keyboard__key-label">A</span></button>
+                <button class="keyboard__key keyboard__key--shaded" data-key="s" type="button"><span
+                        class="keyboard__key-label">S</span></button>
+                <button class="keyboard__key keyboard__key--shaded" data-key="d" type="button"><span
+                        class="keyboard__key-label">D</span></button>
+                <button class="keyboard__key" data-key="f" type="button"><span
+                        class="keyboard__key-label">F</span></button>
+                <button class="keyboard__key keyboard__key--shaded" data-key="g" type="button"><span
+                        class="keyboard__key-label">G</span></button>
+                <button class="keyboard__key" data-key="h" type="button"><span
+                        class="keyboard__key-label">H</span></button>
+                <button class="keyboard__key keyboard__key--shaded" data-key="j" type="button"><span
+                        class="keyboard__key-label">J</span></button>
+                <button class="keyboard__key" data-key="k" type="button"><span
+                        class="keyboard__key-label">K</span></button>
+                <button class="keyboard__key keyboard__key--shaded" data-key="l" type="button"><span
+                        class="keyboard__key-label">L</span></button>
+                <button class="keyboard__key keyboard__key--shaded" data-key="ArrowUp" type="button"
+                    aria-label="up arrow">
+                    <span class="keyboard__key-label">
+                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill="currentColor" d="M12 6l7 7H5z" />
+                        </svg>
+                    </span>
+                </button>
+                <button class="keyboard__key keyboard__key--shaded" data-key="Enter" type="button">
+                    <span class="keyboard__key-label keyboard__key-label--small">ret</span>
+                </button>
+                <button class="keyboard__key" data-key="z" type="button"><span
+                        class="keyboard__key-label">Z</span></button>
+                <button class="keyboard__key" data-key="x" type="button"><span
+                        class="keyboard__key-label">X</span></button>
+                <button class="keyboard__key keyboard__key--shaded" data-key="c" type="button"><span
+                        class="keyboard__key-label">C</span></button>
+                <button class="keyboard__key" data-key="v" type="button"><span
+                        class="keyboard__key-label">V</span></button>
+                <button class="keyboard__key keyboard__key--shaded" data-key="b" type="button"><span
+                        class="keyboard__key-label">B</span></button>
+                <button class="keyboard__key keyboard__key--shaded" data-key="n" type="button"><span
+                        class="keyboard__key-label">N</span></button>
+                <button class="keyboard__key keyboard__key--shaded" data-key="m" type="button"><span
+                        class="keyboard__key-label">M</span></button>
+                <button class="keyboard__key" data-key="fn" type="button"><span
+                        class="keyboard__key-label keyboard__key-label--small">fn</span></button>
+                <button class="keyboard__key" data-key="ArrowLeft" type="button" aria-label="left arrow">
+                    <span class="keyboard__key-label">
+                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill="currentColor" d="M6 12l7-7v14z" />
+                        </svg>
+                    </span>
+                </button>
+                <button class="keyboard__key" data-key="ArrowDown" type="button" aria-label="down arrow">
+                    <span class="keyboard__key-label">
+                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill="currentColor" d="M12 18l-7-7h14z" />
+                        </svg>
+                    </span>
+                </button>
+                <button class="keyboard__key keyboard__key--shaded" data-key="ArrowRight" type="button"
+                    aria-label="right arrow">
+                    <span class="keyboard__key-label">
+                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill="currentColor" d="M18 12l-7 7V5z" />
+                        </svg>
+                    </span>
+                </button>
+            </div>
+        </div>
+        <section>
+            <h1>Not Found</h1>
+            <p>The page you were looking for doesn’t exist or may have been moved.</p>
+            <a class="btn-link" href="index.html">Go back home</a>
+        </section>
+    </main>
+
+    <script>
+        var keyButtons = Array.prototype.slice.call(document.querySelectorAll('.keyboard__key'));
+        var keyMap = keyButtons.reduce(function (acc, button) {
+            var key = button.getAttribute('data-key');
+            if (key) acc[key] = button;
+            return acc;
+        }, {});
+
+        var downSound = new Audio('https://assets.codepen.io/416221/keystroke-down.mp3');
+        var upSound = new Audio('https://assets.codepen.io/416221/keystroke-up.mp3');
+        downSound.preload = 'auto';
+        upSound.preload = 'auto';
+
+        function activateKey(name) {
+            var key = keyMap[name];
+            if (!key) return;
+            key.classList.add('keyboard__key--active');
+            downSound.currentTime = 0;
+            downSound.play();
+        }
+
+        function deactivateKey(name) {
+            var key = keyMap[name];
+            if (!key) return;
+            key.classList.remove('keyboard__key--active');
+            upSound.currentTime = 0;
+            upSound.play();
+        }
+
+        document.addEventListener('keydown', function (event) {
+            activateKey(event.key);
+        });
+
+        document.addEventListener('keyup', function (event) {
+            deactivateKey(event.key);
+        });
+
+        keyButtons.forEach(function (button) {
+            var key = button.getAttribute('data-key');
+            if (!key) return;
+            button.addEventListener('mousedown', function () { activateKey(key); });
+            button.addEventListener('mouseup', function () { deactivateKey(key); });
+            button.addEventListener('touchstart', function () { activateKey(key); });
+            button.addEventListener('touchend', function () { deactivateKey(key); });
+        });
+    </script>
+</body>
+
+</html>

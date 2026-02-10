@@ -8,10 +8,12 @@
     <meta name="description"
         content="Custom drone solutions and surveying for Navi Mumbai. Built on code, not just cameras.">
 
-    <!-- Fonts: Inter for that clean Apple look -->
+    <!-- Fonts: Sora + Manrope for a clean Apple-like vibe -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -19,7 +21,8 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
+                        sans: ['Manrope', 'sans-serif'],
+                        display: ['Sora', 'sans-serif'],
                     },
                     colors: {
                         ios: {
@@ -42,74 +45,390 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="bg-ios-bg text-ios-text antialiased selection:bg-ios-blue selection:text-white">
+<body class="theme-ascend antialiased">
+    <div id="pre-loader" aria-hidden="true">
+        <div class="loadingGraphics">
+            <svg class="drone" x="0" y="0" width="300" height="300" viewBox="-55 -40 450 420">
+                <path fill="#888"
+                    d="M325.2 159.8l-0.1 0c0 0-3.3-0.5-6.4-0.1 -6.3 0.7-11.6 3.2-14.9 5.1 -1.6 0.9-2.6 1.6-2.9 1.8h-54.3v-21.5c1.6-1.1 2.6-2.9 2.6-4.9 0-2-1-3.8-2.6-4.9v-2.7H240v2.7c-1.6 1.1-2.6 2.9-2.6 4.9 0 2 1 3.8 2.6 4.9v21.5H201V148c0-2.8-1.8-5.4-4.6-7.6l0 0 46.8-82.7c0.4-0.2 1.5-0.7 3-1.6 3.3-2 8-5.5 11.8-10.5 2.1-2.8 3.1-5.7 3.1-5.7 1.9-6.5-0.9-14-4.6-16.3l-0.4-0.2c-2.6-1.7-11.5-2-16.6 4.3 0 0-2 2.3-3.2 5.6 -2.4 5.7-2.9 11.6-2.9 15.5 0 2.2 0.2 3.5 0.2 3.6l0 0.3 0.4 0.2 -43.5 76.8v-19.9c0-1.7-1.4-3.1-3.1-3.1 -1.7 0-3.1 1.4-3.1 3.1v24.2c-7.8-3-12.8-3.9-15.6-3.9 -2.6 0-9.8 1.6-16.8 4.4v-24.6c0-1.7-1.4-3.1-3.1-3.1s-3.1 1.4-3.1 3.1v19.9l-43.3-76 0.4-0.2 0-0.3c0-0.1 0.2-1.4 0.2-3.6 0-3-0.5-7.2-1.8-11.7 -0.3-1.2-0.7-2.5-1.2-3.8C99 30.3 97 28.4 97 28.4 92.7 23 83.9 22 80.2 24.1c-3.9 2.2-6.8 9.9-4.8 16.5 0 0 0.9 3 3.1 5.7 3.7 5.1 8.5 8.5 11.8 10.4 1.5 0.9 2.6 1.4 3 1.6l47.1 82.6c-2.3 2.1-3.8 4.4-3.8 7v18.6H97.7V145c1.6-1.1 2.6-2.9 2.6-4.9 0-2-1-3.8-2.6-4.9v-2.7h-6.6v2.7c-1.6 1.1-2.6 2.9-2.6 4.9 0 2 1 3.8 2.6 4.9v21.5H36.8c-0.3-0.2-1.3-0.9-2.9-1.8 -3.4-1.9-8.7-4.4-14.9-5.1 0 0-3.2-0.4-6.5 0.1 -6.7 1.6-11.9 7.9-11.9 12.4 0 4.2 3.8 11.1 12 12.5 2.6 0.4 6.5 0 6.5 0 6.2-0.7 11.5-3.2 14.9-5.1 1.9-1.1 3-1.9 3-1.9l0.2-0.2V177h54v40.6l0 22.4c-1.6 1.1-2.7 3-2.7 4.9 0 1.9 1.1 3.5 2.7 4.6l0 1.7h6.6v-1.7c1.6-1.1 2.7-2.7 2.7-4.6 0-1.9-1.1-3.8-2.7-4.9v-22.4h2.3l4.9-7.9 0 0h22.6l0 0c-0.4 1.1-0.5 2.1-0.2 3.2 0.4 1.5 1.7 2.8 4 4 0.3 0.1 0.5 0.3 0.8 0.4l-38.1 67.2 -0.4-0.2 -0.2 0.1c-0.1 0-1.3 0.6-3.2 1.7 -3.3 2-8.1 5.4-11.8 10.4 0 0-1.6 1.4-3.2 5.7 -2.8 7.8 1.3 14.5 5 16.6 1.2 0.7 2.7 1 4.5 1 4 0 8.9-1.8 12.2-5.3 0 0 2.1-2.4 3.3-5.6 2.5-5.8 2.9-11.6 2.9-15.5 0-1.8-0.1-3-0.2-3.4l37.8-66.7c0.7 1.1 1.2 2.4 1.5 3.9 0.9 6.6 4.2 30.1 5.5 36.3 0.9 4.2 2 7.6 8.3 9.3 3 0.8 7.2 1.2 13 1.2h0.1 0c5.3 0 9.3-0.4 12.3-1 6.9-1.6 8.1-5.1 9-9.5 1.2-6.2 4.6-29.7 5.5-36.3 0.2-1.5 0.7-2.7 1.3-3.7l37.7 66.2c0 0.4-0.2 1.6-0.2 3.4 0 3.9 0.5 9.7 3 15.5 0 0 1.3 3.1 3.3 5.6 3.2 3.5 8.2 5.3 12.1 5.3 1.7 0 3.2-0.3 4.4-0.9l0.1-0.1c3.7-2.1 7.8-8.8 4.9-16.6 0 0-0.9-3.2-3.2-5.7 -3.7-5-8.4-8.4-11.8-10.4 -1.9-1.1-3.1-1.6-3.2-1.7L244 284l-0.4 0.2 -38.1-66.8c0.3-0.2 0.7-0.3 1-0.5 2.3-1.2 3.5-2.5 4-4 0.3-1 0.2-2.1-0.2-3.1h22.6l0 0 4.9 7.9h2.3v22.4c-1.6 1.1-2.7 3-2.7 4.9 0 1.9 1.1 3.5 2.7 4.6v1.7h6.6l0-1.7c1.6-1.1 2.7-2.7 2.7-4.6 0-1.9-1.1-3.8-2.7-4.9l0-22.4V177h54v0.5l0.2 0.2c0 0 1.1 0.9 3 1.9 3.4 1.9 8.7 4.4 14.9 5.1 3.1 0.6 6.5 0 6.5 0 8.2-1.4 12-8.3 12-12.5C337.2 167.7 332 161.3 325.2 159.8zM105.1 200.9l-5.1-7.5h-2.3V177h38.9v0.7l0 0.7 0.7 0.2c0.3 0.1 2.7 0.7 2.7 3.7 0 2.9-2.4 3.5-2.7 3.6l-0.8 0.2 0.1 0.8c0 0 0.5 4.9-1.4 8.3 -0.8 1.5-1.7 3.1-2.5 4.7 -0.2 0.4-0.4 0.7-0.6 1.1H105.1zM240 193.5h-2.3l-5.1 7.5h-27c-0.2-0.3-0.3-0.7-0.5-1 -0.9-1.7-1.8-3.4-2.6-4.9 -1.9-3.4-1.4-8.3-1.4-8.3l0.1-0.8 -0.8-0.2c-0.3-0.1-2.7-0.7-2.7-3.6 0-3 2.4-3.6 2.7-3.6l0.7-0.1V177H240V193.5z" />
+                <path class="blade" fill="#999"
+                    d="M325.3 183.1c4.8-1.3 8.3-5.7 8.3-10.9 0-5.1-3.4-9.5-8.2-10.9 0.5-2.8 2.7-17.4 1.7-32.8 -1.2-17.1-2-21.7-4.3-23.6 -0.7-0.6-1.5-1-2.2-1 -2.5 0-4.2 3.7-5.3 11.5 -1.8 12.4-3.5 27.9 0 37.2l3.3 8.8c-4.5 1.5-7.8 5.8-7.8 10.8 0 4.9 3.2 9.1 7.6 10.7 -0.4 2.3-2.8 17.2-1.7 33 1.2 17.1 2 21.7 4.3 23.6 0.7 0.6 1.5 1 2.2 1 2.5 0 4.2-3.7 5.3-11.5 1.8-12.4 3.5-27.9 0-37.2L325.3 183.1z" />
+                <path class="blade" fill="#999"
+                    d="M308 271c-0.5-0.2-1.1-0.3-1.7-0.3 -2.9 0-8 2-21 8.3 -14.3 6.9-26.1 16.4-27.9 17.8 -2-1.8-4.6-2.8-7.4-2.8 -2 0-3.9 0.5-5.6 1.5 -2.6 1.5-4.5 3.9-5.3 6.9 -0.5 1.7-0.5 3.5-0.2 5.2l-9.3 1.5c-9.8 1.6-22.5 10.7-32.4 18.4 -5.4 4.3-7.9 7.4-7.6 9.5 0.2 1 0.9 1.7 2.2 2.2 0.5 0.2 1.1 0.3 1.7 0.3 2.9 0 8-2 21-8.3 13.9-6.7 25.5-15.9 27.7-17.7 2.1 2 4.9 3.2 7.9 3.2 2 0 3.9-0.5 5.6-1.5 2.6-1.5 4.5-3.9 5.3-6.9 0.5-1.9 0.5-3.9 0-5.8l9.2-1.5c9.8-1.6 22.5-10.7 32.4-18.4 5.4-4.3 7.9-7.4 7.6-9.5C310 272.2 309.2 271.5 308 271z" />
+                <path class="blade" fill="#999"
+                    d="M140.3 327.8c-9.9-7.7-22.6-16.8-32.4-18.3l-9.3-1.5c0.3-1.7 0.3-3.5-0.2-5.2 -0.8-2.9-2.7-5.4-5.3-6.9 -1.7-1-3.6-1.5-5.6-1.5 -2.8 0-5.4 1-7.4 2.8 -1.7-1.4-13.6-10.9-27.9-17.8 -13-6.2-18.1-8.2-21-8.2 -0.6 0-1.2 0.1-1.7 0.3 -1.3 0.5-2 1.2-2.2 2.2 -0.3 2.2 2.1 5.3 7.6 9.5 9.9 7.7 22.6 16.8 32.4 18.3l9.2 1.4c-0.5 1.9-0.5 3.9 0.1 5.8 0.8 2.9 2.7 5.4 5.3 6.9 1.7 1 3.6 1.5 5.6 1.5 3 0 5.8-1.2 7.9-3.2 2.2 1.8 13.8 11 27.7 17.6 13 6.2 18.1 8.2 21 8.2 0.6 0 1.2-0.1 1.7-0.3 1.3-0.5 2-1.2 2.2-2.2C148.3 335.1 145.8 332 140.3 327.8z" />
+                <path class="blade" fill="#999"
+                    d="M19 161.4l3.3-8.8c3.5-9.3 1.8-24.8 0-37.2 -1.1-7.7-2.9-11.5-5.4-11.5 -0.7 0-1.4 0.3-2.2 1 -2.3 1.9-3.1 6.6-4.3 23.6 -1 15.4 1.2 30 1.7 32.8 -4.7 1.4-8.2 5.7-8.2 10.9 0 5.2 3.5 9.6 8.4 10.9l-3.3 8.7c-3.5 9.3-1.8 24.8 0 37.2 1.1 7.7 2.9 11.5 5.4 11.5 0.7 0 1.4-0.3 2.2-1 2.3-1.9 3.1-6.6 4.3-23.6 1.1-15.8-1.3-30.8-1.7-33 4.4-1.6 7.6-5.8 7.6-10.7C26.8 167.1 23.5 162.9 19 161.4z" />
+                <path class="blade" fill="#999"
+                    d="M146.3 2.1c-1.5-1.8-5.5-1.3-12.4 1.4 -11.7 4.6-26 10.8-32.3 18.5l-5.9 7.1c-2.1-2.1-5-3.3-8-3.3 -2 0-3.9 0.5-5.6 1.5 -4.5 2.5-6.5 7.7-5.4 12.5 -2.7 1-16.5 6.3-29.3 14.8C33 64 29.4 67 28.8 69.9c-0.2 1.1-0.1 2 0.5 2.7 0.6 0.7 1.6 1.1 3 1.1h0c2.1 0 5.3-0.8 9.4-2.4 11.7-4.6 26-10.8 32.3-18.5l6.1-7.3c2.1 1.9 4.7 2.9 7.6 2.9 2 0 3.9-0.5 5.6-1.5 4.3-2.4 6.4-7.3 5.5-11.9 2.1-0.8 16.3-6.1 29.5-14.9 14.3-9.5 17.9-12.5 18.4-15.4C147 3.7 146.8 2.8 146.3 2.1z" />
+                <path class="blade" fill="#999"
+                    d="M307.9 69c-0.6-2.9-4.2-5.9-18.5-15.4C276.5 45.2 262.7 39.9 260 39c1.1-4.8-1-9.9-5.5-12.5 -1.7-1-3.6-1.5-5.6-1.5 -3.1 0-5.9 1.2-8.1 3.3l-5.9-7.1c-6.4-7.6-20.7-13.8-32.4-18.4 -6.8-2.7-10.9-3.1-12.4-1.3 -0.5 0.6-0.7 1.6-0.5 2.7 0.6 2.9 4.2 5.9 18.5 15.4 13.2 8.7 27.4 14 29.6 14.8 -0.3 1.6-0.2 3.3 0.2 5 0.8 2.9 2.7 5.4 5.3 6.9 1.7 1 3.6 1.5 5.6 1.5 2.9 0 5.6-1.1 7.6-3l6.1 7.3c6.4 7.6 20.7 13.8 32.4 18.4 4.1 1.6 7.2 2.4 9.4 2.4 1.4 0 2.4-0.4 3-1.1C308 71.1 308.1 70.2 307.9 69z" />
+            </svg>
+            <p class="loadingText">loading</p>
+            <div class="loadingSign" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
 
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 glass-nav border-b border-gray-200/50 transition-all duration-300">
-        <div class="max-w-5xl mx-auto px-6 h-12 flex items-center justify-between">
-            <a href="#" class="font-semibold tracking-tight text-lg">ASCEND</a>
-            <div class="hidden md:flex space-x-8 text-xs font-medium text-ios-text/80">
-                <a href="#vision" class="hover:text-ios-blue transition-colors">Vision</a>
-                <a href="#technology" class="hover:text-ios-blue transition-colors">Technology</a>
-                <a href="#anatomy" class="hover:text-ios-blue transition-colors">Anatomy</a>
-                <a href="#services" class="hover:text-ios-blue transition-colors">Services</a>
-                <a href="#contact" class="hover:text-ios-blue transition-colors">Contact</a>
+    <nav class="nav-shell">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">ASCEND</a>
+            <div class="nav-links">
+                <a href="#technology">Technology</a>
+                <a href="#hive-showcase">Hive</a>
+                <a href="#anatomy">Anatomy</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
             </div>
-            <a href="#contact"
-                class="bg-black text-white text-xs px-3 py-1.5 rounded-full hover:bg-gray-800 transition-colors">
-                Connect
-            </a>
+            <a href="#contact" class="nav-cta">Start a Mission</a>
         </div>
     </nav>
 
-    <!-- Hero Section with Cursor FX -->
-    <section class="pt-32 pb-20 md:pt-48 md:pb-32 px-6 text-center overflow-hidden relative js-cursor-fx-target">
-
-        <!-- Abstract Background Objects for Parallax -->
-        <div class="absolute inset-0 overflow-hidden pointer-events-none">
-            <div
-                class="cursor-fx-object js-cursor-fx-object--1 absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-400/20 rounded-full blur-[100px] opacity-60 mix-blend-multiply transform -translate-x-1/2 -translate-y-1/2">
+    <!-- Hero Section -->
+    <section id="vision" class="hero js-cursor-fx-target">
+        <div class="hero-orbs">
+            <div class="hero-orb orb-1 js-cursor-fx-object--1"></div>
+            <div class="hero-orb orb-2 js-cursor-fx-object--2"></div>
+        </div>
+        <div class="hero-grid">
+            <div class="hero-copy">
+                <p class="hero-kicker">Project Ascend</p>
+                <h1 class="hero-title">Precision autonomy for the built world.</h1>
+                <p class="hero-subtitle">We build aerial systems that map, inspect, and secure complex sites with
+                    code-first intelligence.</p>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn-primary">Start a Mission</a>
+                    <a href="#technology" class="btn-ghost">Explore the stack →</a>
+                </div>
+                <div class="hero-meta">
+                    <span>RTK-grade outputs</span>
+                    <span>Edge compute</span>
+                    <span>Autonomous workflows</span>
+                </div>
             </div>
-            <div
-                class="cursor-fx-object js-cursor-fx-object--2 absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-indigo-400/20 rounded-full blur-[80px] opacity-60 mix-blend-multiply transform translate-x-1/2 translate-y-1/2">
+            <div class="hero-visual">
+                <div class="hero-card hero-card--image">
+                    <img src="https://images.unsplash.com/photo-1506947411487-a56738267384?auto=format&fit=crop&q=80&w=2000"
+                        alt="Commercial drone surveying">
+                    <div class="hero-card-caption">
+                        <p>Live Feed</p>
+                        <strong>Autonomous Survey</strong>
+                    </div>
+                </div>
+                <div class="hero-card hero-card--metric">
+                    <p class="metric-label">RTK Accuracy</p>
+                    <p class="metric-value">&lt;2cm</p>
+                </div>
+                <div class="hero-card hero-card--metric">
+                    <p class="metric-label">Autonomy Stack</p>
+                    <p class="metric-value">Python + PX4</p>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="max-w-4xl mx-auto space-y-6 relative z-10">
-            <h2 class="text-ios-blue font-semibold text-sm md:text-base tracking-wide uppercase fade-up">Project Ascend
-            </h2>
-            <h1
-                class="text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tighter text-black fade-up delay-100 leading-[1.05]">
-                Precision Aerial <br class="hidden md:block" /> Intelligence.
-            </h1>
-            <p
-                class="text-xl md:text-2xl text-ios-subtext max-w-2xl mx-auto font-medium leading-relaxed fade-up delay-200">
-                Engineering-grade drone solutions for Navi Mumbai. <br class="hidden md:block" />
-                Built on code, not just cameras.
-            </p>
-            <div class="pt-8 flex items-center justify-center space-x-4 fade-up delay-300">
-                <a href="#contact"
-                    class="bg-ios-blue text-white px-6 py-3 rounded-full font-medium hover:bg-ios-blueHover transition-all text-sm md:text-base shadow-lg shadow-blue-500/30">
-                    Initiate Mission
-                </a>
-                <a href="#technology"
-                    class="text-ios-blue hover:underline font-medium text-sm md:text-base flex items-center group">
-                    View Tech Specs <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
-                </a>
+    <section id="hive-showcase" class="hive-showcase">
+        <div class="hive-stage">
+            <div class="hive-copy">
+                <p class="hive-kicker">Hive Interface</p>
+                <h2 class="hive-title">Mission control, visualized.</h2>
+                <p class="hive-subtitle">An animated schematic of our swarm controller, mapped directly to the flight
+                    stack.</p>
+                <a href="#contact" class="btn-ghost light">See it in action →</a>
+            </div>
+            <div class="hive-graphic" aria-label="Animated drone hive illustration">
+                <object data="assets/hive.svg" type="image/svg+xml" aria-label="Drone hive illustration">
+                    Your browser does not support inline SVG.
+                </object>
             </div>
         </div>
+    </section>
 
-        <!-- Hero Image -->
-        <div class="mt-20 max-w-6xl mx-auto fade-up delay-500 relative z-10">
-            <div
-                class="relative bg-black rounded-[40px] shadow-2xl aspect-[16/9] md:aspect-[21/9] overflow-hidden group">
-                <img src="https://images.unsplash.com/photo-1506947411487-a56738267384?auto=format&fit=crop&q=80&w=2000"
-                    alt="Commercial Drone Surveying"
-                    class="absolute inset-0 w-full h-full object-cover opacity-90 transition duration-700 group-hover:scale-105">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                <div class="absolute bottom-8 left-8 md:bottom-12 md:left-12 text-left">
-                    <p class="text-white/80 text-sm font-medium tracking-wide uppercase mb-1">Live Feed</p>
-                    <p class="text-white text-2xl md:text-3xl font-semibold">Autonomous Survey in Progress</p>
+    <section id="flight-showcase" class="air-scene">
+        <div class="air-scene__wrap">
+            <div class="air-scene__copy">
+                <p class="air-kicker">Flight Loop</p>
+                <h2 class="air-title">Autonomy in motion.</h2>
+                <p class="air-subtitle">A real-time 3D flight illustration representing our planning, stability, and
+                    sensing layers.</p>
+            </div>
+            <div class="air-scene__viewport" aria-hidden="true">
+                <div class="scene">
+                    <div class="cloud cloud--one">
+                        <div class="cloud__shift">
+                            <div class="cloud__body">
+                                <div>
+                                    <div class="cuboid cuboid--cloud">
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="cuboid cuboid--cloud">
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="cuboid cuboid--cloud">
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cloud cloud--two">
+                        <div class="cloud__shift">
+                            <div class="cloud__body">
+                                <div>
+                                    <div class="cuboid cuboid--cloud">
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="cuboid cuboid--cloud">
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="cuboid cuboid--cloud">
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cloud cloud--three">
+                        <div class="cloud__shift">
+                            <div class="cloud__body">
+                                <div>
+                                    <div class="cuboid cuboid--cloud">
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="cuboid cuboid--cloud">
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="cuboid cuboid--cloud">
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="plane__floater">
+                        <div class="plane__looper">
+                            <div class="plane">
+                                <div class="plane__wheels">
+                                    <div class="plane__axle">
+                                        <div class="cuboid cuboid--axle">
+                                            <div class="cuboid__side"></div>
+                                            <div class="cuboid__side"></div>
+                                            <div class="cuboid__side"></div>
+                                            <div class="cuboid__side"></div>
+                                            <div class="cuboid__side"></div>
+                                            <div class="cuboid__side"></div>
+                                        </div>
+                                    </div>
+                                    <div class="plane__wheel plane__wheel--left">
+                                        <div class="cuboid cuboid--wheel-left">
+                                            <div class="cuboid__side"></div>
+                                            <div class="cuboid__side"></div>
+                                            <div class="cuboid__side"></div>
+                                            <div class="cuboid__side"></div>
+                                            <div class="cuboid__side"></div>
+                                            <div class="cuboid__side"></div>
+                                        </div>
+                                    </div>
+                                    <div class="plane__wheel plane__wheel--right">
+                                        <div class="cuboid cuboid--wheel-right">
+                                            <div class="cuboid__side"></div>
+                                            <div class="cuboid__side"></div>
+                                            <div class="cuboid__side"></div>
+                                            <div class="cuboid__side"></div>
+                                            <div class="cuboid__side"></div>
+                                            <div class="cuboid__side"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="plane__body">
+                                    <div class="cuboid cuboid--body">
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                    </div>
+                                </div>
+                                <div class="plane__nose">
+                                    <div class="cuboid cuboid--nose">
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                    </div>
+                                </div>
+                                <div class="plane__propellor">
+                                    <div class="propellor"></div>
+                                </div>
+                                <div class="plane__screen">
+                                    <div class="cuboid cuboid--screen">
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                    </div>
+                                </div>
+                                <div class="plane__wings wings">
+                                    <div class="wings__top">
+                                        <div class="cuboid cuboid--wings-top">
+                                            <div class="cuboid__side"></div>
+                                            <div class="cuboid__side"></div>
+                                            <div class="cuboid__side"></div>
+                                            <div class="cuboid__side"></div>
+                                            <div class="cuboid__side"></div>
+                                            <div class="cuboid__side"></div>
+                                        </div>
+                                    </div>
+                                    <div class="wings__ghost">
+                                        <div class="cuboid cuboid--wings-ghost">
+                                            <div class="cuboid__side"></div>
+                                            <div class="cuboid__side"></div>
+                                            <div class="cuboid__side"></div>
+                                            <div class="cuboid__side"></div>
+                                            <div class="cuboid__side"></div>
+                                            <div class="cuboid__side"></div>
+                                        </div>
+                                    </div>
+                                    <div class="wings__bottom">
+                                        <div class="cuboid cuboid--wings-bottom">
+                                            <div class="cuboid__side"></div>
+                                            <div class="cuboid__side"></div>
+                                            <div class="cuboid__side"></div>
+                                            <div class="cuboid__side"></div>
+                                            <div class="cuboid__side"></div>
+                                            <div class="cuboid__side"></div>
+                                        </div>
+                                    </div>
+                                    <div class="wings__strobe wings__strobe--left">
+                                        <div class="cuboid cuboid--strobe">
+                                            <div class="cuboid__side"></div>
+                                            <div class="cuboid__side"></div>
+                                            <div class="cuboid__side"></div>
+                                            <div class="cuboid__side"></div>
+                                            <div class="cuboid__side"></div>
+                                            <div class="cuboid__side"></div>
+                                        </div>
+                                    </div>
+                                    <div class="wings__strobe wings__strobe--right">
+                                        <div class="cuboid cuboid--strobe">
+                                            <div class="cuboid__side"></div>
+                                            <div class="cuboid__side"></div>
+                                            <div class="cuboid__side"></div>
+                                            <div class="cuboid__side"></div>
+                                            <div class="cuboid__side"></div>
+                                            <div class="cuboid__side"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="plane__tail">
+                                    <div class="cuboid cuboid--tail">
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                    </div>
+                                </div>
+                                <div class="plane__stabilizer plane__stabilizer--horizontal">
+                                    <div class="cuboid cuboid--horizontal-stabilizer">
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                    </div>
+                                </div>
+                                <div class="plane__stabilizer plane__stabilizer--vertical">
+                                    <div class="cuboid cuboid--vertical-stabilizer">
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                    </div>
+                                </div>
+                                <div class="plane__beacon">
+                                    <div class="cuboid cuboid--beacon">
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                        <div class="cuboid__side"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -119,9 +438,9 @@
     <section id="technology" class="pt-24 pb-12 px-6 bg-white">
         <div class="max-w-5xl mx-auto">
             <div class="mb-16 text-center md:text-left">
-                <h2 class="text-4xl md:text-5xl font-semibold tracking-tight text-black">Built In-House.</h2>
-                <p class="mt-4 text-xl text-ios-subtext max-w-xl">We don't rely on off-the-shelf limits. We build the
-                    stack from the hardware up.</p>
+                <h2 class="text-4xl md:text-5xl font-semibold tracking-tight text-black">Designed to own the stack.</h2>
+                <p class="mt-4 text-xl text-ios-subtext max-w-xl">Hardware, firmware, and autonomy tuned as one system.
+                </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px] md:auto-rows-[350px]">
@@ -135,9 +454,9 @@
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
                     <div class="relative z-10 p-8 md:p-10">
                         <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-2">Compute</h3>
-                        <p class="text-3xl font-semibold text-white">Raspberry Pi 5 + Pixhawk 6C.</p>
-                        <p class="mt-2 text-gray-300 max-w-md">Onboard edge computing allows for real-time decision
-                            making without relying on cloud connectivity.</p>
+                        <p class="text-3xl font-semibold text-white">Compute stack: Pi 5 + Pixhawk 6C.</p>
+                        <p class="mt-2 text-gray-300 max-w-md">Edge decisions, low-latency control, and reliable
+                            failover.</p>
                     </div>
                 </div>
 
@@ -146,7 +465,7 @@
                     class="bento-card md:row-span-2 bg-black rounded-[30px] p-8 md:p-10 relative overflow-hidden flex flex-col text-white justify-between">
                     <div class="z-10">
                         <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wide">Precision</h3>
-                        <p class="mt-2 text-3xl font-semibold">RTK <br> Accuracy.</p>
+                        <p class="mt-2 text-3xl font-semibold">RTK <br> Precision.</p>
                     </div>
                     <div class="text-center my-auto">
                         <div
@@ -154,8 +473,7 @@
                             &lt;2cm
                         </div>
                     </div>
-                    <p class="text-gray-400 text-sm mt-auto">Survey-grade positioning. Far superior to standard consumer
-                        GPS.</p>
+                    <p class="text-gray-400 text-sm mt-auto">Survey-grade positioning for repeatable missions.</p>
                 </div>
 
                 <!-- Card 3: Code (Small - Clean) -->
@@ -168,7 +486,7 @@
                         </svg>
                     </div>
                     <h3 class="text-xl font-semibold text-black">Python Autonomy</h3>
-                    <p class="mt-2 text-sm text-ios-subtext">Custom mission scripts for complex environments.</p>
+                    <p class="mt-2 text-sm text-ios-subtext">Mission logic for complex, dynamic environments.</p>
                 </div>
 
                 <!-- Card 4: Status (Small - Validation) -->
@@ -199,9 +517,9 @@
 
         <div class="max-w-6xl mx-auto px-6 relative z-20">
             <div class="mb-16 text-center">
-                <h2 class="text-4xl md:text-6xl font-semibold tracking-tight">Anatomy of Autonomy.</h2>
-                <p class="mt-4 text-xl text-gray-400 max-w-2xl mx-auto">Beneath the frame lies a network of
-                    custom-integrated systems.</p>
+                <h2 class="text-4xl md:text-6xl font-semibold tracking-tight">Anatomy of autonomy.</h2>
+                <p class="mt-4 text-xl text-gray-400 max-w-2xl mx-auto">Every subsystem is mapped, validated, and tuned
+                    for mission-grade stability.</p>
             </div>
 
             <!-- Interactive Image Container -->
@@ -280,7 +598,7 @@
     <section id="services" class="py-24 px-6 bg-ios-bg">
         <div class="max-w-5xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-semibold tracking-tight text-black">Services designed for industry.</h2>
+                <h2 class="text-4xl font-semibold tracking-tight text-black">Services designed for precision.</h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -295,11 +613,11 @@
                     </div>
                     <div class="p-8">
                         <h3 class="text-2xl font-semibold text-black mb-2">Surveying & Mapping</h3>
-                        <p class="text-ios-subtext leading-relaxed">2D Orthomosaics & 3D Terrain Models with
-                            centimeter-level precision. Perfect for construction progress monitoring and land records.
+                        <p class="text-ios-subtext leading-relaxed">Orthomosaics and 3D terrain models with survey-grade
+                            accuracy.
                         </p>
-                        <a href="#contact" class="inline-block mt-4 text-ios-blue font-medium hover:underline">Request
-                            Sample Map →</a>
+                        <a href="#contact" class="inline-block mt-4 text-ios-blue font-medium hover:underline">Request a
+                            sample →</a>
                     </div>
                 </div>
 
@@ -314,14 +632,50 @@
                     </div>
                     <div class="p-8">
                         <h3 class="text-2xl font-semibold text-black mb-2">Industrial Inspection</h3>
-                        <p class="text-ios-subtext leading-relaxed">Visual inspection for towers, pipelines, and
-                            GPS-denied warehouses. We go where humans shouldn't.</p>
-                        <a href="#contact" class="inline-block mt-4 text-ios-blue font-medium hover:underline">View
-                            Inspection Logs →</a>
+                        <p class="text-ios-subtext leading-relaxed">Towers, pipelines, and GPS-denied facilities with
+                            high-fidelity capture.</p>
+                        <a href="#contact" class="inline-block mt-4 text-ios-blue font-medium hover:underline">Review
+                            inspection logs →</a>
                     </div>
                 </div>
 
-                <!-- Service 3: Custom Dev (Full Width) -->
+                <!-- Service 3: Agriculture (Image Card) -->
+                <div
+                    class="group bg-white rounded-[30px] overflow-hidden shadow-apple hover:shadow-2xl transition-all duration-300">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&q=80&w=1000"
+                            alt="Agriculture Crop Monitoring"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-semibold text-black mb-2">Agriculture Intelligence</h3>
+                        <p class="text-ios-subtext leading-relaxed">Repeatable crop health scans, irrigation checks, and
+                            yield insights.</p>
+                        <a href="#contact" class="inline-block mt-4 text-ios-blue font-medium hover:underline">Plan a
+                            farm survey →</a>
+                    </div>
+                </div>
+
+                <!-- Service 4: Security (Image Card) -->
+                <div
+                    class="group bg-white rounded-[30px] overflow-hidden shadow-apple hover:shadow-2xl transition-all duration-300">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&q=80&w=1000"
+                            alt="Perimeter Security Monitoring"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-semibold text-black mb-2">Security & Perimeter</h3>
+                        <p class="text-ios-subtext leading-relaxed">Rapid perimeter sweeps and geo-fenced incident
+                            response.</p>
+                        <a href="#contact" class="inline-block mt-4 text-ios-blue font-medium hover:underline">Request a
+                            security brief →</a>
+                    </div>
+                </div>
+
+                <!-- Service 5: Custom Dev (Full Width) -->
                 <div
                     class="md:col-span-2 bg-gradient-to-br from-gray-900 to-black rounded-[30px] p-10 md:p-16 text-center text-white relative overflow-hidden group">
                     <div
@@ -329,12 +683,12 @@
                     </div>
                     <div class="relative z-10">
                         <h3 class="text-2xl md:text-3xl font-semibold mb-4">Custom Autonomy Development</h3>
-                        <p class="text-gray-400 max-w-2xl mx-auto text-lg">We build what you can't buy. From custom
-                            Python scripts for warehouse navigation to specialized sensor integration.</p>
+                        <p class="text-gray-400 max-w-2xl mx-auto text-lg">Bespoke mission logic, sensor fusion, and
+                            edge workflows built for your site.</p>
                         <div class="mt-8">
                             <a href="#contact"
                                 class="inline-flex items-center justify-center px-6 py-3 border border-white/30 rounded-full text-white hover:bg-white hover:text-black transition-all">
-                                Consult Engineering Team
+                                Consult the engineering team
                             </a>
                         </div>
                     </div>
@@ -348,14 +702,85 @@
         </div>
     </section>
 
+    <!-- Process Row -->
+    <section class="py-20 px-6 bg-white">
+        <div class="max-w-5xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+                <div>
+                    <p class="text-xs uppercase tracking-widest text-gray-400">Process</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black">Plan. Fly. Deliver.</h2>
+                </div>
+                <p class="text-ios-subtext max-w-md">Clear phases, predictable timelines, and clean handoffs.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-ios-bg rounded-[28px] p-6 border border-gray-100">
+                    <p class="text-xs uppercase tracking-widest text-gray-400">Plan</p>
+                    <h3 class="mt-2 text-xl font-semibold text-black">Mission Design</h3>
+                    <p class="mt-3 text-ios-subtext">Site scoping, flight paths, and safety review.</p>
+                    <p class="mt-4 text-sm text-gray-500">Timeline: 1-2 days</p>
+                </div>
+                <div class="bg-ios-bg rounded-[28px] p-6 border border-gray-100">
+                    <p class="text-xs uppercase tracking-widest text-gray-400">Fly</p>
+                    <h3 class="mt-2 text-xl font-semibold text-black">Data Capture</h3>
+                    <p class="mt-3 text-ios-subtext">On-site mission with telemetry logging.</p>
+                    <p class="mt-4 text-sm text-gray-500">Timeline: 1 day</p>
+                </div>
+                <div class="bg-ios-bg rounded-[28px] p-6 border border-gray-100">
+                    <p class="text-xs uppercase tracking-widest text-gray-400">Deliver</p>
+                    <h3 class="mt-2 text-xl font-semibold text-black">Reports + Models</h3>
+                    <p class="mt-3 text-ios-subtext">Clean outputs, analysis, and handoff.</p>
+                    <p class="mt-4 text-sm text-gray-500">Timeline: 2-5 days</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Outputs Strip -->
+    <section class="py-16 px-6 bg-ios-bg">
+        <div class="max-w-5xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+                <div>
+                    <p class="text-xs uppercase tracking-widest text-gray-400">Data Outputs</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black">Survey-grade deliverables.
+                    </h2>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <span class="chip">Orthomosaic</span>
+                    <span class="chip">DSM / DTM</span>
+                    <span class="chip">Point Cloud</span>
+                    <span class="chip">Inspection Report</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compliance & Safety -->
+    <section class="py-20 px-6 bg-white">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-[1.1fr,0.9fr] gap-10 items-start">
+            <div>
+                <p class="text-xs uppercase tracking-widest text-gray-400">Compliance & Safety</p>
+                <h2 class="mt-2 text-3xl md:text-4xl font-semibold tracking-tight text-black">Operationally ready.</h2>
+                <p class="mt-4 text-ios-subtext">SOP-first operations, flight logs, and safety-by-design in every
+                    mission.</p>
+            </div>
+            <div class="bg-ios-bg rounded-[28px] p-6 border border-gray-100">
+                <ul class="space-y-3 text-ios-subtext">
+                    <li>DGCA-ready documentation and safety checklists.</li>
+                    <li>Standard operating procedures for every flight.</li>
+                    <li>Secure data handling with audit-ready logs.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer / Contact -->
     <footer id="contact" class="bg-black text-white py-24 px-6">
         <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
                 <h2 class="text-3xl font-semibold tracking-tight">Ready to deploy?</h2>
                 <p class="mt-4 text-gray-400 max-w-sm">
-                    Based in Navi Mumbai. <br>
-                    Student-led. Research-backed. <br>
+                    Navi Mumbai-based. <br>
+                    Research-backed. <br>
                     Safety-first.
                 </p>
                 <div class="mt-8 flex space-x-6">
@@ -366,7 +791,34 @@
                 </div>
             </div>
 
-            <div class="space-y-6">
+            <div class="space-y-8">
+                <form action="https://formspree.io/f/your-form-id" method="POST" class="space-y-4">
+                    <div>
+                        <label class="text-xs uppercase tracking-widest text-gray-500">Your Name</label>
+                        <input name="name" type="text" required
+                            class="mt-2 w-full rounded-xl bg-black/30 border border-gray-700 px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:border-blue-400"
+                            placeholder="Full name">
+                    </div>
+                    <div>
+                        <label class="text-xs uppercase tracking-widest text-gray-500">Email</label>
+                        <input name="email" type="email" required
+                            class="mt-2 w-full rounded-xl bg-black/30 border border-gray-700 px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:border-blue-400"
+                            placeholder="you@email.com">
+                    </div>
+                    <div>
+                        <label class="text-xs uppercase tracking-widest text-gray-500">Project Details</label>
+                        <textarea name="message" rows="4" required
+                            class="mt-2 w-full rounded-xl bg-black/30 border border-gray-700 px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:border-blue-400"
+                            placeholder="Survey area, timeline, and deliverables"></textarea>
+                    </div>
+                    <button type="submit"
+                        class="w-full md:w-auto inline-flex items-center justify-center px-6 py-3 rounded-full bg-ios-blue text-white font-medium hover:bg-ios-blueHover transition-colors">
+                        Send Request
+                    </button>
+                    <p class="text-xs text-gray-500">Formspree placeholder: replace the action URL with your form ID.
+                    </p>
+                </form>
+
                 <div>
                     <p class="text-xs uppercase tracking-widest text-gray-500 mb-1">Email</p>
                     <a href="mailto:harshpandhehome@gmail.com"
@@ -386,7 +838,7 @@
         </div>
         <div class="max-w-5xl mx-auto mt-20 pt-8 border-t border-gray-800 text-xs text-gray-500 flex justify-between">
             <p>&copy; 2026 ASCEND.</p>
-            <p>Designed for Engineering.</p>
+            <p>Designed for engineering.</p>
         </div>
     </footer>
 
